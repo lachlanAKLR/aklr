@@ -7,11 +7,11 @@ class Weather extends React.Component {
 
   componentWillMount() {
     fetch(
-      'http://api.openweathermap.org/data/2.5/weather?q=Melbourne,%20AU&APPID=7cd9f96832a0c4d7c7f3720518324305'
+      'https://api.openweathermap.org/data/2.5/weather?q=Melbourne,%20AU&APPID=7cd9f96832a0c4d7c7f3720518324305'
     )
-      .then((response) => response.json())
+      .then((response) => response.json()) 
       .then((data) => {
-        this.setState({ weather: data }); 
+        this.setState({ weather: data });  
       });
   }
 
