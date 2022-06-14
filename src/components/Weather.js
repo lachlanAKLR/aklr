@@ -20,7 +20,7 @@ class Weather extends React.Component {
     return (
       <>
         {weather?.weather?.length > 0 && (
-          <li>
+          <li className="nav-weather">
             <span>
               {weather.weather[0].description}
               {/* {weather.visibility}

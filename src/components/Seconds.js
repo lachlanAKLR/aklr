@@ -23,7 +23,7 @@ class Seconds extends React.Component {
   }
 
   render() {
-    return <li>{this.state.time}</li>;
+    return <li className="nav-seconds">{this.state.time}</li>;
   }
 }
 

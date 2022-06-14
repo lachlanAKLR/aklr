@@ -6,40 +6,49 @@ import Hours from './Hours';
 import Weather from './Weather';
 
 const NavStyles = styled.div`
+
+  display: flex;
+  padding: 25px 35px;
+  gap: 20px;
+  text-transform: uppercase;
+
+
   ul {
+    width: 50%;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
-    padding: 25px 35px;
   }
 
-  li:nth-child(1) {
+  .nav-site-title {
     grid-column-start: span 2;
   }
 
-  li:nth-child(2) {
+  .nav-year {
     grid-column-start: span 2;
   }
 
-  li:nth-child(4) {
-    grid-column-start: span 2;
+  .nav-hours {
+    grid-column: 2 / 3;
   }
 
-  li:nth-child(8) {
+  .nav-weather {
+    grid-column-start: span 2;
     text-align: right;
-    text-transform: uppercase;
-    grid-column-start: span 2;
   }
+
 
   @media screen and (max-width: 599px) {
+
     position: fixed;
     z-index: 9;
+    display: block;
+    padding: 0;
+
+
     ul {
-      padding: 15px 10px;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      height: 100vh;
       width: 100vw;
+      padding: 5px 10px;
     }
 
     p {
@@ -47,41 +56,44 @@ const NavStyles = styled.div`
       max-width: 500px;
     }
 
-    li:nth-child(4) {
-      grid-column-start: span 1;
-    }
-    li:nth-child(8) {
-      grid-column-start: span 3;
+    .nav-hours {
+    grid-column: 1 / 2;
+    } 
+
+    .nav-weather {
+    grid-column-start: span 3;
+    text-align: left;
+    } 
+
+    .nav-col-2 {
+      position: fixed;
+      bottom: 0%;
+
     }
 
-    li:nth-child(5),
-    li:nth-child(6),
-    li:nth-child(7),
-    li:nth-child(8) {
-      align-self: end;
-      grid-row-start: 2;
-    }
   }
 `;
 
 export default function Nav() {
   return (
     <NavStyles>
-      <ul>
-        <li>
+      <ul className="nav-col-1">
+        <li className="nav-site-title">
           <h1>AKLR©</h1>
         </li>
-        <li>{new Date().getFullYear()}</li>
-        <li>
+        <li className="nav-year">{new Date().getFullYear()}</li>
+        <li className="nav-month">
           {' '}
           {(new Date().getMonth() + 1 < 10 ? '0' : '') +
             (new Date().getMonth() + 1)}
         </li>
-        <li>
+        <li className="nav-date">
           {' '}
           {(new Date().getDate() + 0 < 10 ? '0' : '') +
             (new Date().getDate() + 0)}
         </li>
+        </ul>
+        <ul className="nav-col-2">
         <Hours />
         <Minutes />
         <Seconds />

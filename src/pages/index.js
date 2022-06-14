@@ -76,7 +76,7 @@ export const query = graphql`
         id
         image {
           asset {
-            gatsbyImageData(fit: FILLMAX, placeholder: DOMINANT_COLOR)
+            gatsbyImageData(fit: SCALE, placeholder: DOMINANT_COLOR)
           }
         }
       }

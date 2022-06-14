@@ -23,7 +23,7 @@ class Minutes extends React.Component {
   }
 
   render() {
-    return <li>{this.state.time}</li>;
+    return <li className="nav-minutes">{this.state.time}</li>;
   }
 }
 

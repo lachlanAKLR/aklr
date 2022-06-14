@@ -14,7 +14,8 @@ const HoverBlock = styled.div`
 
   .gatsby-image-wrapper {
     opacity: 0;
-    position: absolute;
+    width: 600px;
+    position: absolute; 
     transition: 0.25s;
   }
 
@@ -24,7 +25,8 @@ const HoverBlock = styled.div`
   }
 
   .gatsby-image-wrapper:nth-child(3) {
-    width: 350px;
+    width: 400px;
+    height: 600px;
     right: 35px;
   }
 
@@ -35,7 +37,7 @@ const HoverBlock = styled.div`
   }
 
   .gatsby-image-wrapper:nth-child(7) {
-    width: 600px;
+    width: 600px;  
     height: 400px;
     bottom: 50%;
     left: 50%;
@@ -43,23 +45,24 @@ const HoverBlock = styled.div`
   }
 
   .gatsby-image-wrapper:nth-child(9) {
-    width: 600px;
-    height: 400px;
+    width: 400px;
+    height: 600px;
     bottom: 50%;
     right: 35px;
     transform: translate(0%, 50%);
   }
 
   .gatsby-image-wrapper:nth-child(11) {
-    width: 600px;
-    height: 400px;
+    opacity: 0;
+    width: 400px;
+    height: 600px; 
     bottom: 150px;
     right: 100px;
   }
 
   .gatsby-image-wrapper:nth-child(13) {
-    width: 600px;
-    height: 400px;
+    width: 400px;
+    height: 600px;
     bottom: 150px;
     left: 100px;
   }
@@ -140,7 +143,11 @@ function HoverImage({ photo }) {
         id={photo.id}
         image={photo.image.asset.gatsbyImageData}
         alt={photo.caption}
-      />
+        imgStyle={{
+          objectFit: "contain",
+          objectPosition: "50% 50%",
+        }}
+      /> 
       <h2 className="photo_caption">{photo.caption}</h2>
     </>
   );
@@ -152,7 +159,7 @@ export default function HoverPhotos({ photos }) {
       <HoverGrid />
       <HoverBlock>
         {photos.map((photo) => (
-          <HoverImage key={photo.id} photo={photo} id={photo.id} />
+          <HoverImage key={photo.id} photo={photo} id={photo.id} /> 
         ))}
       </HoverBlock>
     </>
