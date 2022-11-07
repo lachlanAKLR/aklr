@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Nav from '../components/Nav';
 import GlobalStyles from '../styles/GlobalStyles';
-import HoverPhotos from '../components/HoverPhotos';
+import HorizontalImages from '../components/HorizontalImages';
+import Info from '../components/Info';
 
 const HomeStyles = styled.div`
   display: grid;
@@ -31,54 +32,74 @@ const HomeStyles = styled.div`
   }
 `;
 
-function showThird() {
-  const hoverImage = document.getElementsByClassName('gatsby-image-wrapper')[2];
-  const caption = document.getElementsByClassName('photo_caption')[2];
-  hoverImage.style.opacity = '1';
-  caption.style.opacity = '1';
-}
-
-function hideThird() {
-  const hoverImage = document.getElementsByClassName('gatsby-image-wrapper')[2];
-  const caption = document.getElementsByClassName('photo_caption')[2];
-  hoverImage.style.opacity = '0';
-  caption.style.opacity = '0';
-}
-
 export default function HomePage({ data }) {
-  const abouts = data.about.nodes;
-  const photos = data.photos.nodes;
+  const { layouts } = data.images;
+  const info = data.allSanityAbout.nodes[1]._rawContent;
+
+  const [isActive, setIsActive] = useState(null);
+  const handleClick = (event) => {
+    setIsActive((current) => !current);
+  };
+
   return (
     <>
       <GlobalStyles />
-      <Nav />
-      <HomeStyles onMouseOver={showThird} onMouseLeave={hideThird}>
-        {abouts.map((about) => (
-          <p>{about.text}</p>
-        ))}
-      </HomeStyles>
-      <HoverPhotos photos={photos}>Home Page</HoverPhotos>
+      <Nav info={info} isActive={isActive} handleClick={handleClick} />
+      <HorizontalImages layouts={layouts} isActive={isActive} />
+      <Info info={info} isActive={isActive} handleClick={handleClick} />
     </>
   );
 }
 
 export const query = graphql`
-  query AboutQueryandPhotosQuery {
-    about: allSanityAbout {
-      nodes {
-        text
-        title
-      }
-    }
-    photos: allSanityPhotos {
-      nodes {
-        caption
-        id
-        image {
-          asset {
-            gatsbyImageData(fit: SCALE, placeholder: DOMINANT_COLOR)
+  query {
+    images: sanityHomeImages {
+      layouts {
+        ... on SanitySingleImage {
+          _key
+          _type
+          image {
+            asset {
+              gatsbyImageData
+            }
+          }
+          caption
+          format
+          position
+          backgroundImage {
+            asset {
+              gatsbyImageData
+            }
           }
         }
+        ... on SanityTwoUpImage {
+          _key
+          _type
+          imageOne {
+            asset {
+              gatsbyImageData
+            }
+          }
+          imageTwo {
+            asset {
+              gatsbyImageData
+            }
+          }
+          backgroundImage {
+            asset {
+              gatsbyImageData
+            }
+          }
+          captionOne
+          captionTwo
+        }
+      }
+    }
+    allSanityAbout {
+      nodes {
+        _rawContent
+        _key
+        _id
       }
     }
   }
