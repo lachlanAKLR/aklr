@@ -49,6 +49,9 @@ export default function TwoUpImage({ block, index }) {
             />
           </div>
         </div>
+        <div className="image__caption">
+          <p>{block.captionOne}</p>
+        </div>
       </div>
     </TwoUpImageStyles>
   );

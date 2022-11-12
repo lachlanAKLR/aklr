@@ -14,6 +14,11 @@ body {
   margin: 0;
 }
 
+/* .nav, .image__caption {
+    color: #fff;
+    mix-blend-mode: difference;
+} */
+
 @font-face {
     font-family: Art-Company-Mono;
     src: url(${font});
@@ -39,5 +44,21 @@ button, input[type="submit"], input[type="reset"] {
 	cursor: pointer;
 	outline: inherit;
 }
+
+.image__caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  @media screen and (max-width: 599px) {
+    .image__caption {
+    bottom: 40px;
+    left: 15px;
+  }
+
+  font-size: 14px;
+  line-height: 20px;
+  }
 `;
 export default GlobalStyles;

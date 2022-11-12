@@ -6,16 +6,15 @@ const SingleImageStyles = styled.div`
   .blocks {
     width: 100%;
     height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     position: fixed;
     top: 0;
     right: 0%;
     z-index: 7001;
   }
-  .block {
-    width: 10%;
-    height: 100%;
-  }
+
   .home__layouts {
     width: 100%;
     position: fixed;
@@ -29,28 +28,27 @@ const SingleImageStyles = styled.div`
   .active {
     right: 33.33%;
   }
+
+  @media screen and (max-width: 599px) {
+    .active {
+      right: 100%;
+    }
+  }
 `;
 
-export default function HorizontalImages({ mousePercent, layouts, isActive }) {
+export default function HorizontalImages({ layouts, isActive }) {
   const [isLayout, setIsLayout] = useState(false);
   const handleHover = (event) => {
     setIsLayout((current) => !current);
   };
 
+  const blocks = Array.from({ length: 100 }, (_, index) => (
+    <div className="block" onMouseEnter={handleHover} key={index} />
+  ));
+
   return (
     <SingleImageStyles>
-      <div className={isActive ? 'blocks active' : 'blocks'}>
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-        <div className="block" onMouseEnter={handleHover} />
-      </div>
+      <div className={isActive ? 'blocks active' : 'blocks'}>{blocks}</div>
       <div className={isActive ? 'home__layouts active' : 'home__layouts'}>
         {isLayout ? (
           <Layouts layouts={layouts} />

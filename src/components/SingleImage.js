@@ -46,12 +46,6 @@ const SingleImageStyles = styled.div`
     grid-column-end: 12;
   }
 
-  .image__caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-  }
-
   .image__background {
     grid-column-start: 1;
     grid-column-end: 13;

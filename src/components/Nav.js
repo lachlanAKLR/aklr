@@ -48,14 +48,16 @@ const NavStyles = styled.div`
   }
 
   @media screen and (max-width: 599px) {
-    position: fixed;
-    z-index: 9;
-    display: block;
-    padding: 0;
+    .nav {
+      padding: 15px 15px;
+    }
+
+    .active {
+      right: 100%;
+    }
 
     ul {
-      width: 100vw;
-      padding: 5px 10px;
+      width: 100%;
     }
 
     p {
@@ -72,9 +74,22 @@ const NavStyles = styled.div`
       text-align: left;
     }
 
+    .nav-col-1 {
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px 20px;
+    }
+
+    .nav-col-1 li:nth-child(3) {
+      grid-row-start: 2;
+    }
+
+    .nav-col-1 li:nth-child(4) {
+      grid-row-start: 2;
+    }
+
     .nav-col-2 {
       position: fixed;
-      bottom: 0%;
+      bottom: 10px;
     }
   }
 `;

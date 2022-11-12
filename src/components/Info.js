@@ -8,6 +8,7 @@ const InfoStyles = styled.div`
     height: 100%;
     width: 33.33%;
     bottom: 0;
+    right: 0;
     padding: 25px 35px;
     background-color: #ff4d00;
     transition: all ease 1s;
@@ -26,21 +27,46 @@ const InfoStyles = styled.div`
     bottom: 20px;
     right: 35px;
     z-index: 10001 !important;
+    border: 0.5px solid black;
+    padding: 5px 10px;
+    width: 70px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(220, 220, 220, 0.2);
+    transition: all 1s ease;
   }
 
-  button p:hover,
+  button p:hover {
+    background-color: rgba(220, 220, 220, 0.5);
+  }
+
+  .open {
+    background-color: rgba(220, 220, 220, 0);
+  }
+
   a:hover {
     text-decoration: underline;
     text-decoration-thickness: 0.5px;
     text-underline-offset: 2px;
   }
 
-  .hidden {
-    right: 0%;
-  }
+  @media screen and (max-width: 599px) {
+    button p {
+      bottom: auto;
+      top: 10px;
+      right: 10px;
+      padding: 2.5px 5px;
+      width: 65px;
+    }
 
-  .show {
-    right: 0%;
+    .info__content {
+      width: 100%;
+      padding: 15px;
+    }
+
+    button p:hover {
+      background-color: rgba(220, 220, 220, 0);
+    }
   }
 `;
 
@@ -51,7 +77,9 @@ export default function Info({ info, isActive, handleClick }) {
         <PortableText value={info} />
       </div>
       <button onClick={handleClick} type="button" className="close__button">
-        <p>{isActive ? 'Close' : 'Info'}</p>
+        <p className={isActive ? 'open' : 'close'}>
+          {isActive ? 'Close' : 'Info'}
+        </p>
       </button>
     </InfoStyles>
   );
