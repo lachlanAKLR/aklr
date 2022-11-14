@@ -53,7 +53,7 @@ button, input[type="submit"], input[type="reset"] {
 
   @media screen and (max-width: 599px) {
     .image__caption {
-    bottom: 40px;
+    bottom: 55px;
     left: 15px;
   }
 

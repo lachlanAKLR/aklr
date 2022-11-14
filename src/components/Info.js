@@ -61,7 +61,7 @@ const InfoStyles = styled.div`
 
     .info__content {
       width: 100%;
-      padding: 15px;
+      padding: 80px 15px 15px 15px;
     }
 
     button p:hover {

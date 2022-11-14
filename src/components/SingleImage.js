@@ -58,6 +58,30 @@ const SingleImageStyles = styled.div`
   .image__background .gatsby-image-wrapper {
     height: 100vh;
   }
+
+  @media screen and (max-width: 599px) {
+    .active {
+      right: 100%;
+    }
+
+    .image__inner {
+      gap: 15px;
+    }
+
+    .image__center {
+      grid-column-start: 3;
+      grid-column-end: 11;
+    }
+
+    .image__right {
+      grid-column-start: 5;
+      grid-column-end: 12;
+    }
+    .landscape {
+      grid-column-start: 2;
+      grid-column-end: 12;
+    }
+  }
 `;
 
 export default function SingleImage({ block, index }) {

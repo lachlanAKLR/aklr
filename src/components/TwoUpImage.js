@@ -29,6 +29,18 @@ const TwoUpImageStyles = styled.div`
   .image__inner .gatsby-image-wrapper {
     max-height: 90vh;
   }
+
+  @media screen and (max-width: 599px) {
+    .image__one {
+      grid-column-start: 2;
+      grid-column-end: 7;
+    }
+
+    .image__two {
+      grid-column-start: 7;
+      grid-column-end: 12;
+    }
+  }
 `;
 
 export default function TwoUpImage({ block, index }) {
