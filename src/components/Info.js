@@ -65,7 +65,7 @@ const InfoStyles = styled.div`
     }
 
     button p:hover {
-      background-color: rgba(220, 220, 220, 0);
+      background-color: #e8ebe4;
     }
   }
 `;
