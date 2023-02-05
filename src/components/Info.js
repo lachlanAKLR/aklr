@@ -10,7 +10,7 @@ const InfoStyles = styled.div`
     bottom: 0;
     right: 0;
     padding: 25px 35px;
-    background-color: #ff4d00;
+    background-color: #e8ebe4;
     transition: all ease 1s;
   }
   a {
@@ -65,7 +65,7 @@ const InfoStyles = styled.div`
     }
 
     button p:hover {
-      background-color: #e8ebe4;
+      background-color: rgba(220, 220, 220, 0);
     }
   }
 `;
