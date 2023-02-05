@@ -52,12 +52,14 @@ export default function TwoUpImage({ block, index }) {
             <GatsbyImage
               image={block.imageOne.asset.gatsbyImageData}
               alt={block.captionOne}
+              loading="eager"
             />
           </div>
           <div className="image__two">
             <GatsbyImage
               image={block.imageTwo.asset.gatsbyImageData}
               alt={block.captionTwo}
+              loading="eager"
             />
           </div>
         </div>

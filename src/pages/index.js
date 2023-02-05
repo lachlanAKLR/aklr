@@ -60,7 +60,7 @@ export const query = graphql`
           _type
           image {
             asset {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
           caption
@@ -68,7 +68,7 @@ export const query = graphql`
           position
           backgroundImage {
             asset {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
@@ -77,17 +77,17 @@ export const query = graphql`
           _type
           imageOne {
             asset {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
           imageTwo {
             asset {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
           backgroundImage {
             asset {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
           captionOne

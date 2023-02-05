@@ -100,6 +100,7 @@ export default function SingleImage({ block, index }) {
             <GatsbyImage
               image={block.image.asset.gatsbyImageData}
               alt={block.caption}
+              loading="eager"
             />
           </div>
           {isBackground && (
@@ -107,6 +108,7 @@ export default function SingleImage({ block, index }) {
               <GatsbyImage
                 image={block.backgroundImage.asset.gatsbyImageData}
                 alt={block.caption}
+                loading="eager"
               />
             </div>
           )}
