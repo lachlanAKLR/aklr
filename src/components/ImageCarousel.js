@@ -20,6 +20,7 @@ const ImageCarouselStyles = styled.div`
   }
 
   .carousel-image {
+    padding-top: 30px;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -39,9 +40,31 @@ const ImageCarouselStyles = styled.div`
     z-index: 8000; */
   }
 
+  .number-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
   @media screen and (max-width: 599px) {
     .active {
       right: 100%;
+    }
+    .gatsby-image-wrapper img {
+      max-height: 60vh;
+    }
+
+    .carousel-image {
+      padding-top: 0;
+    }
+
+    .number-caption {
+      bottom: 40px;
+      left: 15px;
+    }
+
+    .image-caption {
+      white-space: normal;
     }
   }
 `;
@@ -51,11 +74,15 @@ export default function ImageCarousel({ layouts, isActive }) {
     <ImageCarouselStyles>
       <div className={isActive ? 'home__layouts active' : 'home__layouts'}>
         <Carousel>
-          {layouts.map((layout, index) => (
+          {layouts.map((layout, index, array) => (
             <CarouselItem layout={layout}>
+              {console.log(layout._type)}
               <div className="carousel-image" key={index}>
                 <GatsbyImage image={layout.image.asset.gatsbyImageData} />
                 <div className="image-caption">{layout.caption}</div>
+                <div className="number-caption">
+                  {index + 1}/{array.length}
+                </div>
               </div>
             </CarouselItem>
           ))}

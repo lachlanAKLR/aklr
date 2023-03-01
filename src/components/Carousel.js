@@ -76,7 +76,7 @@ const Carousel = ({ children }) => {
             →
           </button>
         </div>
-        <div className="numbers">
+        {/* <div className="numbers">
           {React.Children.map(children, (child, index) => (
             <button
               type="button"
@@ -90,7 +90,7 @@ const Carousel = ({ children }) => {
               {index + 1}
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
