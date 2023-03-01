@@ -1,6 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
+import { CarouselItem } from './Carousel';
 
 const TwoUpImageStyles = styled.div`
   .image__wrapper {
@@ -45,28 +46,30 @@ const TwoUpImageStyles = styled.div`
 
 export default function TwoUpImage({ block, index }) {
   return (
-    <TwoUpImageStyles>
-      <div className="image__wrapper">
-        <div className="image__inner">
-          <div className="image__one">
-            <GatsbyImage
-              image={block.imageOne.asset.gatsbyImageData}
-              alt={block.captionOne}
-              loading="eager"
-            />
+    <CarouselItem>
+      <TwoUpImageStyles>
+        <div className="image__wrapper">
+          <div className="image__inner">
+            <div className="image__one">
+              <GatsbyImage
+                image={block.imageOne.asset.gatsbyImageData}
+                alt={block.captionOne}
+                loading="eager"
+              />
+            </div>
+            <div className="image__two">
+              <GatsbyImage
+                image={block.imageTwo.asset.gatsbyImageData}
+                alt={block.captionTwo}
+                loading="eager"
+              />
+            </div>
           </div>
-          <div className="image__two">
-            <GatsbyImage
-              image={block.imageTwo.asset.gatsbyImageData}
-              alt={block.captionTwo}
-              loading="eager"
-            />
+          <div className="image__caption">
+            <p>{block.captionOne}</p>
           </div>
         </div>
-        <div className="image__caption">
-          <p>{block.captionOne}</p>
-        </div>
-      </div>
-    </TwoUpImageStyles>
+      </TwoUpImageStyles>
+    </CarouselItem>
   );
 }

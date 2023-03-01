@@ -1,6 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
+import { CarouselItem } from './Carousel';
 
 const SingleImageStyles = styled.div`
   .image__wrapper {
@@ -14,6 +15,7 @@ const SingleImageStyles = styled.div`
     gap: 30px;
     height: 100%;
     align-items: center;
+    text-align: center;
   }
 
   .image__center {
@@ -89,34 +91,36 @@ export default function SingleImage({ block, index }) {
   const isNotFull = block.position !== 'full';
   const isBackground = block.backgroundImage !== null;
   return (
-    <SingleImageStyles>
-      <div className="image__wrapper">
-        <div className="image__inner">
-          <div
-            className={`image__${block.position} ${
-              isNotFull && isLandscape ? 'landscape' : ''
-            }`}
-          >
-            <GatsbyImage
-              image={block.image.asset.gatsbyImageData}
-              alt={block.caption}
-              loading="eager"
-            />
-          </div>
-          {isBackground && (
-            <div className="image__background">
+    <CarouselItem>
+      <SingleImageStyles>
+        <div className="image__wrapper">
+          <div className="image__inner">
+            <div
+              className={`image__${block.position} ${
+                isNotFull && isLandscape ? 'landscape' : ''
+              }`}
+            >
               <GatsbyImage
-                image={block.backgroundImage.asset.gatsbyImageData}
+                image={block.image.asset.gatsbyImageData}
                 alt={block.caption}
                 loading="eager"
               />
             </div>
-          )}
+            {isBackground && (
+              <div className="image__background">
+                <GatsbyImage
+                  image={block.backgroundImage.asset.gatsbyImageData}
+                  alt={block.caption}
+                  loading="eager"
+                />
+              </div>
+            )}
+          </div>
+          <div className="image__caption">
+            <p>{block.caption}</p>
+          </div>
         </div>
-        <div className="image__caption">
-          <p>{block.caption}</p>
-        </div>
-      </div>
-    </SingleImageStyles>
+      </SingleImageStyles>
+    </CarouselItem>
   );
 }
