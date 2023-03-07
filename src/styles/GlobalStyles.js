@@ -7,6 +7,8 @@ const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -45,49 +47,47 @@ button, input[type="submit"], input[type="reset"] {
 	outline: inherit;
 }
 
-.image__caption {
+  .image__caption {
     position: relative;
     bottom: 40px;
     left: 20px;
   }
 
- .gatsby-image-wrapper img {
-  max-height: 80vh;
- }
+
+  .site__grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+
+
 
 
     /* Carousel */
 
 
-  .carousel {
-    overflow: hidden;
-  }
-
-  .inner {
-    white-space: nowrap;
-    transition: 0s;
-  }
-
-  .carousel-item {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-  }
-
-  .indicators {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: auto;
-    position: fixed;
-    width: 100%;
-    height: 40px;
-    bottom: 5px;
-  }
+    .indicators {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: auto;
+      position: fixed;
+      width: 100%;
+      height: 40px;
+      bottom: 5px;
+      /* display: none; */
+    }
 
   .indicators > button {
     /* margin: 5px; */
+  }
+
+
+
+  .number-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
   }
 
    .active-number {
@@ -112,11 +112,11 @@ button, input[type="submit"], input[type="reset"] {
 
   } 
 
-  .arrow-left {
+  .arrow-left { 
     opacity: 0;
     position: fixed; 
     height: 100%;
-    width: 50%;
+    width: 25%;
     top: 0;
     left: 0;
   }
@@ -125,7 +125,7 @@ button, input[type="submit"], input[type="reset"] {
     opacity: 0;
     position: fixed;
     height: 100%;
-    width: 50%;
+    width: 25%;
     top: 0;
     right: 0;
   }

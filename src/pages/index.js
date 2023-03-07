@@ -57,44 +57,19 @@ export const query = graphql`
   query {
     images: sanityHomeImages {
       layouts {
-        ... on SanitySingleImage {
-          _key
-          _type
-          image {
-            asset {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-          }
-          caption
-          format
-          position
-          backgroundImage {
-            asset {
-              gatsbyImageData(placeholder: BLURRED)
-            }
+        imageOne {
+          asset {
+            gatsbyImageData
           }
         }
-        ... on SanityTwoUpImage {
-          _key
-          _type
-          imageOne {
-            asset {
-              gatsbyImageData(placeholder: BLURRED)
-            }
+        imageTwo {
+          asset {
+            gatsbyImageData
           }
-          imageTwo {
-            asset {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-          }
-          backgroundImage {
-            asset {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-          }
-          captionOne
-          captionTwo
         }
+        caption
+        format
+        fullscreen
       }
     }
     allSanityAbout {
