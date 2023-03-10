@@ -161,6 +161,10 @@ const ImageCarouselStyles = styled.div`
       gap: 10px;
     }
 
+    .carousel {
+      height: 90vh;
+    }
+
     .arrow-right {
       ${(props) =>
         props.isActive
@@ -232,7 +236,7 @@ const ImageCarouselStyles = styled.div`
     }
 
     .image-caption-wrapper {
-      bottom: 40px;
+      bottom: 120px;
       padding: 0 15px;
       display: block;
     }

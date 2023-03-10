@@ -11,6 +11,11 @@ const GlobalStyles = createGlobalStyle`
   padding: 0px;
 }
 
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
+
 .arrow-left, .arrow-right {
   cursor: none;
 }
