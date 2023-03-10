@@ -85,6 +85,7 @@ const NavStyles = styled.div`
 
     .nav-col-1 li:nth-child(4) {
       grid-row-start: 2;
+      grid-column-start: 3;
     }
 
     .nav-col-2 {

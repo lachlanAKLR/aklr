@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
   padding: 0px;
 }
 
+.arrow-left, .arrow-right {
+  cursor: none;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -62,7 +66,6 @@ button, input[type="submit"], input[type="reset"] {
 
 
 
-
     /* Carousel */
 
 
@@ -78,17 +81,10 @@ button, input[type="submit"], input[type="reset"] {
       /* display: none; */
     }
 
-  .indicators > button {
+  .indicators > button { 
     /* margin: 5px; */
   }
 
-
-
-  .number-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-  }
 
    .active-number {
     line-height: 0px;
@@ -109,30 +105,75 @@ button, input[type="submit"], input[type="reset"] {
     margin: 0 7px;
     padding: 5px 5px 7px 5px;
     line-height: 0px;
-
   } 
-
-  .arrow-left { 
-    opacity: 0;
-    position: fixed; 
-    height: 100%;
-    width: 25%;
-    top: 0;
-    left: 0;
-  }
-
-  .arrow-right {
-    opacity: 0;
-    position: fixed;
-    height: 100%;
-    width: 25%;
-    top: 0;
-    right: 0;
-  }
 
   .numbers {
     position: fixed;
     left: 20px;
+  }
+
+  /* **** Cursor **** */
+
+  .cursor {
+    text-transform: uppercase;
+    width: 30px;
+    height: 30px;
+    /* backdrop-filter: blur(5px); */
+    /* background-color: black; */
+    /* border: 0.5px solid black;  */
+    border-radius: 100%;
+    position: fixed;
+    transform: translate(-50%, -50%); 
+    transition-property: opacity;
+    /* transition: all 100ms ease;  */
+    transition-property: opacity, background-color, transform;
+    z-index: 10000;
+    pointer-events: none;
+    /* transition: width 300ms ease, height 0s ease, border-radius 500ms ease, background-color 0s ease; */
+    }
+
+    .c--small {
+      cursor: pointer;
+    }
+
+    .c--click {
+      /* transform: translate(-50%, -50%) scale(0.5);
+      background-color: #121212; */
+    }
+  .c--hover, .l--hover {
+    /* width: 75px;
+    height: 25px; */
+    background: none;
+    border-radius: 15px;
+    transition: width 500ms ease, height 500ms ease, background-color 500ms ease;
+    text-align: center;
+    /* transform: translate(-50%, -50%) scale(1.25); */
+  }
+
+  /* .cursor p  {
+    opacity: 0;
+  } */
+
+  .c--arrow {
+    opacity: 0;
+  }
+
+  .c--right-hover {
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    transform: rotate(0deg);
+    transition: all .5s ease;
+  }
+
+  .c--left-hover {
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transform: rotate(180deg);
+    transition: all .5s ease;
   }
 
 
@@ -143,8 +184,9 @@ button, input[type="submit"], input[type="reset"] {
     left: 15px;
   }
 
-  font-size: 14px;
-  line-height: 20px;
+  .cursor {
+    display: none;
   }
+}
 `;
 export default GlobalStyles;
