@@ -162,7 +162,8 @@ const ImageCarouselStyles = styled.div`
     }
 
     .carousel {
-      height: 90vh;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
     }
 
     .arrow-right {
@@ -236,7 +237,7 @@ const ImageCarouselStyles = styled.div`
     }
 
     .image-caption-wrapper {
-      bottom: 120px;
+      bottom: 40px;
       padding: 0 15px;
       display: block;
     }

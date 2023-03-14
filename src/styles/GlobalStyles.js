@@ -9,9 +9,16 @@ const GlobalStyles = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   margin: 0px;
   padding: 0px;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
 }
 
-a {
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+a, button {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
 }
