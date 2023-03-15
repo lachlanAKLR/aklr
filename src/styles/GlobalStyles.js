@@ -78,6 +78,7 @@ button, input[type="submit"], input[type="reset"] {
 
 
 
+
     /* Carousel */
 
 
@@ -199,6 +200,12 @@ button, input[type="submit"], input[type="reset"] {
   .cursor {
     display: none;
   }
+
+  .home__layouts {
+      min-height: -webkit-fill-available;
+      overflow: hidden;
+    }
+
 }
 `;
 export default GlobalStyles;

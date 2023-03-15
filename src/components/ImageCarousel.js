@@ -237,7 +237,7 @@ const ImageCarouselStyles = styled.div`
     }
 
     .image-caption-wrapper {
-      bottom: 40px;
+      bottom: 120px;
       padding: 0 15px;
       display: block;
     }
