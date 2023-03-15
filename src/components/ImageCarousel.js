@@ -240,6 +240,7 @@ const ImageCarouselStyles = styled.div`
       bottom: 120px;
       padding: 0 15px;
       display: block;
+      display: none;
     }
 
     .caption {
