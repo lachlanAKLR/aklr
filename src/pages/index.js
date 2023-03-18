@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Nav from '../components/Nav';
 import GlobalStyles from '../styles/GlobalStyles';
-import HorizontalImages from '../components/HorizontalImages';
 import Info from '../components/Info';
 import ImageCarousel from '../components/ImageCarousel';
 import Cursor from '../components/Cursor';
@@ -33,6 +32,21 @@ const HomeStyles = styled.div`
     }
   }
 `;
+
+export const Head = () => (
+  <>
+    <title>AKLR</title>
+    <meta name="description" content="Design Services" />
+    <meta property="og:title" content="AKLR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Design Services" />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/0Y0hLM6/Social-Share.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </>
+);
 
 export default function HomePage({ data }) {
   const { layouts } = data.images;

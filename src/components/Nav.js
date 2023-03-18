@@ -6,6 +6,7 @@ import Hours from './Hours';
 import Weather from './Weather';
 
 const NavStyles = styled.div`
+  cursor: none;
   .nav {
     position: fixed;
     top: 0;
