@@ -6,6 +6,7 @@ import GlobalStyles from '../styles/GlobalStyles';
 import Info from '../components/Info';
 import ImageCarousel from '../components/ImageCarousel';
 import Cursor from '../components/Cursor';
+import PopUp from '../components/PopUp';
 
 const HomeStyles = styled.div`
   display: grid;
@@ -61,6 +62,7 @@ export default function HomePage({ data }) {
     <>
       <Cursor />
       <GlobalStyles />
+      <PopUp />
       <Nav info={info} isActive={isActive} handleClick={handleClick} />
       <ImageCarousel layouts={layouts} isActive={isActive} />
       {/* <HorizontalImages layouts={layouts} isActive={isActive} /> */}

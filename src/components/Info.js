@@ -24,8 +24,8 @@ const InfoStyles = styled.div`
     padding-bottom: 0;
     text-transform: uppercase;
     position: fixed;
-    bottom: 20px;
-    right: 35px;
+    bottom: 15px;
+    right: 15px;
     z-index: 10001 !important;
     border: 0.5px solid black;
     padding: 5px 10px;

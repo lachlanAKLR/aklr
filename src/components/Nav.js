@@ -13,7 +13,7 @@ const NavStyles = styled.div`
     right: 0%;
     width: 100%;
     display: flex;
-    padding: 25px 35px;
+    padding: 15px;
     gap: 20px;
     text-transform: uppercase;
     z-index: 7001;
@@ -50,7 +50,7 @@ const NavStyles = styled.div`
 
   @media screen and (max-width: 599px) {
     .nav {
-      padding: 15px 15px;
+      padding: 10px;
     }
 
     .active {

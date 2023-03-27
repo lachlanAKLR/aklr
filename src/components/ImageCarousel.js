@@ -56,7 +56,7 @@ const ImageCarouselStyles = styled.div`
   .modal__image-wrapper {
     height: 100%;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 15px;
     position: absolute;
   }
 
@@ -105,9 +105,9 @@ const ImageCarouselStyles = styled.div`
 
   .image-caption-wrapper {
     position: absolute;
-    bottom: 25px;
+    bottom: 15px;
     left: 0;
-    padding: 0 30px;
+    padding: 0 15px;
     width: 100%;
     height: fit-content;
   }
