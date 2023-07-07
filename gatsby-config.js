@@ -69,5 +69,18 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-omni-font-loader',
+      options: {
+        mode: 'render-blocking',
+        enableListener: true,
+        custom: [
+          {
+            name: ['Art-Company-Mono'],
+            file: '/fonts/fonts.css',
+          },
+        ],
+      },
+    },
   ],
 };

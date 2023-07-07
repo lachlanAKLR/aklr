@@ -37,10 +37,10 @@ body {
     mix-blend-mode: difference;
 } */
 
-@font-face {
+/* @font-face {
     font-family: Art-Company-Mono;
     src: url(${font});
-  }
+  } */
 
 a, p, li, ul, h1, h2, button, * {
   font-family: 'Art-Company-Mono', Courier New;
