@@ -77,12 +77,12 @@ export const query = graphql`
       layouts {
         imageOne {
           asset {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
         imageTwo {
           asset {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
         caption

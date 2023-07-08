@@ -34,8 +34,22 @@ const PopUpStyles = styled.div`
     padding-bottom: 25px;
   }
 
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   button {
     width: fit-content;
+    opacity: 0;
+    animation: appear 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 
   button p {

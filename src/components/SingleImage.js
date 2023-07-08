@@ -104,6 +104,7 @@ export default function SingleImage({ block, index }) {
                 image={block.image.asset.gatsbyImageData}
                 alt={block.caption}
                 loading="eager"
+                critical
               />
             </div>
             {isBackground && (
@@ -112,6 +113,7 @@ export default function SingleImage({ block, index }) {
                   image={block.backgroundImage.asset.gatsbyImageData}
                   alt={block.caption}
                   loading="eager"
+                  critical
                 />
               </div>
             )}

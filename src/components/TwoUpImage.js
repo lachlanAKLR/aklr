@@ -55,6 +55,7 @@ export default function TwoUpImage({ block, index }) {
                 image={block.imageOne.asset.gatsbyImageData}
                 alt={block.captionOne}
                 loading="eager"
+                critical
               />
             </div>
             <div className="image__two">
@@ -62,6 +63,7 @@ export default function TwoUpImage({ block, index }) {
                 image={block.imageTwo.asset.gatsbyImageData}
                 alt={block.captionTwo}
                 loading="eager"
+                critical
               />
             </div>
           </div>
